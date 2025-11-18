@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <base href="../../" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="appicon128.png">
+    <link type="text/css" rel="stylesheet" href="pages/page.css" />
+    <title>レイヤーメイズ</title>
+
+    <style type="text/css"><!--
+
+    --></style>
+
+    <script type="text/javascript" src="lib/include.js"></script>
+    <script type="text/javascript" src="pages/game/GameLoader.js"></script>
+    <script type="text/javascript" src="pages/game/title/TitleScene.js"></script>
+    <script type="text/javascript" src="pages/game/title/TitleCoronator.js"></script>
+    <script type="text/javascript" src="pages/game/main/MainScene.js"></script>
+    <script type="text/javascript" src="pages/game/main/Scorer.js"></script>
+    <script type="text/javascript" src="pages/game/main/ScoreDisplayer.js"></script>
+    <script type="text/javascript" src="pages/game/main/effects.js"></script>
+    <script type="text/javascript" src="pages/game/main/CannonBall.js"></script>
+    <script type="text/javascript" src="pages/game/main/stage/StageExecutant.js"></script>
+    <script type="text/javascript" src="pages/game/main/stage/StageSupervisor.js"></script>
+    <script type="text/javascript" src="pages/game/main/stage/CommandQueue.js"></script>
+    <script type="text/javascript" src="pages/game/main/stage/StageCommand.js"></script>
+    <script type="text/javascript" src="pages/game/main/stage/commands-management.js"></script>
+    <script type="text/javascript" src="pages/game/main/stage/commands-terminations.js"></script>
+    <script type="text/javascript" src="pages/game/main/stage/commands-units.js"></script>
+    <script type="text/javascript" src="pages/game/main/stage/StageMap.js"></script>
+    <script type="text/javascript" src="pages/game/main/stage/StageMarker.js"></script>
+    <script type="text/javascript" src="pages/game/main/stage/StageBox.js"></script>
+    <script type="text/javascript" src="pages/game/main/stand/StandExecutant.js"></script>
+    <script type="text/javascript" src="pages/game/main/stand/ornaments.js"></script>
+    <script type="text/javascript" src="pages/game/main/stand/UnitExecutant.js"></script>
+    <script type="text/javascript" src="pages/game/main/stand/PlayerUnit.js"></script>
+    <script type="text/javascript" src="pages/game/main/stand/EnemyUnit.js"></script>
+    <script type="text/javascript" src="pages/game/main/stand/brains.js"></script>
+    <script type="text/javascript" src="pages/game/clear/ClearScene.js"></script>
+    <script type="text/javascript" src="pages/game/clear/FireworkMist.js"></script>
+    <script type="text/javascript" src="pages/game/clear/clear-uis.js"></script>
+    <script type="text/javascript"><!--
+
+      var Settings = {
+          "debug": false,    // デバッグモードかどうか。
+      };
+
+      document.addEventListener("DOMContentLoaded", function(event) {
+
+          // デバッグ時は <body> に class="debug" を付ける。
+          if(Settings["debug"])
+              document.body.classList.add("debug");
+
+          new GameLoader("canvas");
+
+          // なんとかアドレスバーに引っ込んでもらうためのもの。完全に効くとは限らない。
+//           window.scrollTo(0,0);
+//           setTimeout(function(){
+//               window.scrollTo(0,100);
+//           }, 3000);
+      });
+
+      function test() {
+      }
+
+      function test2() {
+      }
+
+    --></script>
+
+  </head>
+
+  <body>
+
+    <canvas class="full" id="canvas"></canvas>
+
+    <div id="debug">
+      <button onclick="EngageScene.currentEngaged.start()">start</button>
+      <button onclick="EngageScene.currentEngaged.stop()">stop</button>
+      <button onclick="location.reload()">reload</button>
+      <button onclick="EngageScene.currentEngaged.tick(EngageScene.currentEngaged.now + 10)">tick(10)</button>
+      <button onclick="test()">test</button>
+      <button onclick="test2()">test2</button>
+      <button onclick="console.log(EngageScene.currentEngaged.dump()); console.log(EngageScene.currentEngaged)">dump</button>
+    </div>
+
+  </body>
+</html>
